@@ -8,40 +8,9 @@
       make and model name.
 */
 
-function Car(){
-  this.Make = "Chevrolet";
-  this.Model = "Colorado";
+function Make(){
+  this.makeName = "Chevrolet";
 }
-
-function Green() {
-  this.color = "Green";
-}
-Green.prototype = new Car();
-
-var green = new Green();
-console.log('green', green);
-
-
-function Blue() {
-  this.color = "Blue";
-}
-Blue.prototype = new Car();
-
-var blue = new Blue();
-console.log('blue', blue);
-
-
-function Red() {
-  this.color = "Red";
-}
-Red.prototype = new Car();
-
-var red = new Red();
-console.log('red', red);
-
-
-
-
 
 
 /*
@@ -50,25 +19,54 @@ console.log('red', red);
    vehicle's make.
  */
 
+function Make(){
+  this.makeName = "Chevrolet";
+}
+
+
+
 /*
 Create a function, Model, to hold the 
 corresponding property and value
 */
 
+function Model () {
+  this.modelName = "Colorado"
+}
 
 // What is the prototype of a Model?
- 
+
+Model.prototype = new Make();
+
+  // body...
+
 
 // Define a Car
+
+function Car(color) {
+  this.color = color;
+}
 
 
 // What is the prototype of a Car?
 
+Car.prototype = new Model();
 
 // Create the first car
 
+var car2 = new Car("Blue");
 
 // Create the second car
 
+var thisCar = new Car("Black");
 
 // Create the third car
+
+var myCar = new Car("Orange");
+
+
+console.log(thisCar)
+console.log(car2)
+console.log(myCar)
+
+
